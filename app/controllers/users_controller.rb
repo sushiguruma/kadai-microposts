@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.order('created_at DESC').page(params[:page])
+    counts(@user)
   end
 
   def new
@@ -25,9 +27,35 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    
+    if @user.update(user_params)
+      flash[:success] = 'ユーザ情報を更新しました。'
+      redirect_to @user
+    else
+      flash[:danger] = 'ユーザ情報の更新に失敗しました。'
+      render :edit
+    end
+      
+  end
+  
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    
+    flash[:success] = 'ユーザは正常に削除されました。'
+    redirect_to '/'
+  end
+    
+  
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :age, :introduction)
   end
 end

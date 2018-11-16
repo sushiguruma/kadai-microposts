@@ -1,5 +1,5 @@
 <div class = "text-center">
-  <h1>Sign up</h1>
+  <h1>Edit_Profile</h1>
 </div>
 
 <div class = "row">
@@ -37,8 +37,12 @@
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
       
-      <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
+      <%= f.submit 'Update', class: 'btn btn-primary btn-block' %>
     <% end %>
+    
+    <br>
+    
+      <%= link_to 'Delete', @user, method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-warning btn-block' %>
     
   </div>
 </div>
