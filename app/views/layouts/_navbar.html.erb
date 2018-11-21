@@ -21,6 +21,8 @@
                 <li role = "separator" class = "divider"></li>
                 <li><%= link_to 'Edit_profile', edit_user_path(current_user) %></li>
                 <li role = "separator" class = "divider"></li>
+                <li><%= link_to 'My_favorite_posts', likes_user_path(current_user) %></li>
+                <li role = "separator" class = "divider"></li>
                 <li><%= link_to 'Logout', logout_path, method: :delete %></li>
               </ul>
             </li>
