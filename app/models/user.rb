@@ -42,7 +42,7 @@ class User < ApplicationRecord
   end
   
   def cancel_like(micropost)
-    favorite = self.favorites.find_by(micropost_id: micropost.id)
+    favorite = self.favorites.find_by(michreropost_id: micropost.id)
     favorite.destroy if favorite
   end
   
