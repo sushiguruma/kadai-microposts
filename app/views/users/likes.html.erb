@@ -8,6 +8,15 @@
         <img class = "media-object img-rounded img-responsive" src = "<%= gravatar_url(@user, { size: 500 }) %>" alt = "">
       </div>
     </div>
+    <div class = "panel panel-default">
+      <div class = "panel-heading">
+        <h4 class = "panel-title">Profile</h4>
+      </div>
+      <ul class = "list-group">
+        <li class = "list-group-item text-center"><b>Age</b>  :  <%= @user.age %></li>
+        <li class = "list-group-item text-center" style = "word-wrap: break-word;"><b>Introduction</b><br><%= @user.introduction %></li>
+      </ul>
+    </div>
     <%= render 'relationships/follow_button', user: @user %>
   </aside>
   <div class = "col-xs-8">
