@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181121103609) do
+ActiveRecord::Schema.define(version: 20181122141712) do
 
   create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20181121103609) do
     t.string   "password_digest"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
-    t.integer  "age",             limit: 1
+    t.integer  "age"
     t.text     "introduction",    limit: 65535
   end
 
